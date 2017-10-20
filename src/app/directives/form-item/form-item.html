@@ -13,12 +13,12 @@
   </div>
 
   <md-input-container class="md-block">
-    <label>Field Title</label>
+    <label>标题</label>
     <input ng-model="FormItem.item.props.title"/>
   </md-input-container>
 
   <md-input-container class="md-block">
-    <label>Help Text</label>
+    <label>描述</label>
     <input ng-model="FormItem.item.props.helpText" />
   </md-input-container>
 
@@ -32,11 +32,12 @@
     <textarea-item ng-switch-when="textarea" item="FormItem.item"></textarea-item>
     <select-item ng-switch-when="chooseFromList" item="FormItem.item"></select-item>
     <table-item ng-switch-when="table" item="FormItem.item"></table-item>
-    <p ng-switch-default>UNKNOWN TYPE</p>
+    <p ng-switch-default>未知类型</p>
   </div>
 
   <md-input-container class="md-block">
-    <md-checkbox ng-model="FormItem.item.config.required">Required field</md-checkbox>
+    <md-checkbox ng-model="FormItem.item.config.required">是否为必填项</md-checkbox>
+    <md-checkbox ng-model="FormItem.item.config.disappear">是否隐藏</md-checkbox>
   </md-input-container>
 
 </div>

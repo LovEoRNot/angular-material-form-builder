@@ -19,6 +19,9 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
+    <style>
+    .md-datepicker-calendar {background: #fff;}
+    </style>
   </head>
   <body ng-controller="MainController as main" class="main-view">
     <!--[if lt IE 10]>
@@ -27,13 +30,13 @@
 
     <div class="content" layout="row" layout-padding="" layout-margin="" layout-fill="">
       <div flex="" layout="column" class="builder">
-        <h2>Form Builder</h2>
+        <h2>表单创建工具</h2>
         <div layout="column">
           <form-item ng-repeat="item in main.form.items track by $index" type="{{item.type}}" item="item" index="$index" on-delete="main.delete(item, index)" on-up="main.up(item, index)" on-down="main.down(item, index)"></form-item>
         </div>
       </div>
       <div flex="" layout="column" class="view">
-        <h2>Preview</h2>
+        <h2>预览</h2>
         <form name="myFrom">
           <form-view form="main.form"></form-view>
         </form>
@@ -47,31 +50,31 @@
       </md-fab-trigger>
       <md-fab-actions> -->
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('chooseFromList')"><i class="material-icons">playlist_add_check</i>
-          <md-tooltip md-direction="left" md-autohide="">Select</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">下拉框</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('matrix')"><i class="material-icons">grid_on</i>
-          <md-tooltip md-direction="left" md-autohide="">Matrix</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">矩阵</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('textarea')"><i class="material-icons">keyboard</i>
-          <md-tooltip md-direction="left" md-autohide="">Text-Area</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">文本域</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('input')"><i class="material-icons">text_format</i>
-          <md-tooltip md-direction="left" md-autohide="">Text-Input</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">文本框</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('dateInput')"><i class="material-icons">event_note</i>
-          <md-tooltip md-direction="left" md-autohide="">Date-Input</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">日期</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('fileInput')"><i class="material-icons">file_upload</i>
-          <md-tooltip md-direction="left" md-autohide="">File-Input</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">文件上传</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('multipleChoices')"><i class="material-icons">radio_button_checked</i>
-          <md-tooltip md-direction="left" md-autohide="">Radio-Buttons</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">单选框</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('checkboxes')"><i class="material-icons">check_box</i>
-          <md-tooltip md-direction="left" md-autohide="">Checkboxes</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide="">复选框</md-tooltip>
         </md-button>
         <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('table')"><i class="material-icons">view_module</i>
-          <md-tooltip md-direction="left" md-autohide>Table</md-tooltip>
+          <md-tooltip md-direction="left" md-autohide>表格</md-tooltip>
         </md-button>
       <!-- </md-fab-actions>
     </md-fab-speed-dial> -->

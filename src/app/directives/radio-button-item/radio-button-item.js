@@ -24,9 +24,14 @@
     this.Element = $element;
     Utils.extend(this.item, {
       config: {},
-      options: [{
-        value: ''
-      }]
+      options: [
+        {
+          value: '选项1'
+        },
+        {
+          value: '选项1'
+        }
+      ]
     });
   }
 
@@ -36,7 +41,7 @@
 
   RadioButtonCtrl.prototype.addOption = function () {
     this.item.options.push({
-      value: ''
+      value: '选项'+(+this.item.options.length+1)
     });
 
     setTimeout(function() {

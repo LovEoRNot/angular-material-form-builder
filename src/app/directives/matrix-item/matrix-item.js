@@ -27,10 +27,10 @@
     Utils.extend(this.item, {
       config: {
         rows: [{
-          value: ''
+          value: '第1行'
         }],
         columns: [{
-          value: ''
+          value: '第1列'
         }]
       }
     });
@@ -42,7 +42,7 @@
 
   MatrixItemCtrl.prototype.addRow = function() {
     this.item.config.rows.push({
-      value: ''
+      value: `第${+this.item.config.rows.length+1}行`
     });
 
     setTimeout(function() {
@@ -58,7 +58,7 @@
 
   MatrixItemCtrl.prototype.addColumn = function() {
     this.item.config.columns.push({
-      value: ''
+      value: `第${+this.item.config.columns.length+1}列`
     });
 
     setTimeout(function() {

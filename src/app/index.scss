@@ -62,20 +62,36 @@ form-view {
     color: #6c6c6c;
   }
 
+  md-input-container.md-icon-float {
+    margin-top: 10px !important;
+    transition: none !important;   
+  }
+
+   md-select, 
+  .md-input[type="text"],
+  .md-input[type="number"],
+  input[type='file'] {
+    border: 1px solid #eee !important;
+    padding: 8px 5px !important;
+    border-radius: 5px; 
+
+    &:focus {
+      border: 1px solid #aaa !important;
+    }
+  }
 
   .matrix-container {
     overflow: auto;
 
     .matrix {
-      .matrix-row {
-        border-bottom: 1px solid #4caf50;
-      }
-
       .matrix-cell {
         text-align: center;
         overflow: hidden;
+        border: 1px solid #eeeeee;
       }
-
+      .matrix-cell-header {
+        padding: 10px;
+      }
       md-radio-button {
         .md-label {
           margin-left: 0;

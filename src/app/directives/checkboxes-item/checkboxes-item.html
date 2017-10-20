@@ -1,11 +1,11 @@
 <div class="sortable-container" layout="column" sv-root sv-part="Checkboxes.item.options">
   <md-input-container class="md-block">
-    <label>Max Selections</label>
+    <label>最大选择数量</label>
     <input type="number" ng-model="Checkboxes.item.config.maxSelections" />
   </md-input-container>
 
   <md-switch ng-model="Checkboxes.item.config.direction" ng-true-value="'horizontal'" ng-false-value="'vertical'">
-    Layout direction ({{Checkboxes.item.config.direction == 'horizontal' ? 'Horizontal' : 'Vertical'}})
+    排列方式 ({{Checkboxes.item.config.direction == 'horizontal' ? '水平' : '垂直'}})
   </md-switch>
 
   <div class="option-item" layout="row" ng-repeat="option in Checkboxes.item.options track by $index" sv-element>
@@ -15,7 +15,7 @@
     </md-button>
 
     <md-input-container class="md-block">
-      <label>Option {{$index + 1}}</label>
+      <label>选项 {{$index + 1}}</label>
       <input ng-model="option.value" />
     </md-input-container>
 
@@ -25,6 +25,6 @@
 
   </div>
   <div layout="row" layout-align="start">
-    <md-button class="md-primary add-option-button" ng-click="Checkboxes.addOption()">Add Option</md-button>
+    <md-button class="md-primary add-option-button" ng-click="Checkboxes.addOption()">添加</md-button>
   </div>
 </div>

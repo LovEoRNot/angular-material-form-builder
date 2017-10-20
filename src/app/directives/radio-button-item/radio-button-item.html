@@ -1,7 +1,7 @@
 <div class="sortable-container" layout="column" sv-root sv-part="RadioButton.item.options">
 
   <md-switch ng-model="RadioButton.item.config.direction" ng-true-value="'horizontal'" ng-false-value="'vertical'">
-    Layout direction ({{RadioButton.item.config.direction == 'horizontal' ? 'Horizontal' : 'Vertical'}})
+    排列方向 ({{RadioButton.item.config.direction == 'horizontal' ? '水平' : '垂直'}})
   </md-switch>
 
   <div class="option-item" layout="row" ng-repeat="option in RadioButton.item.options track by $index" sv-element>
@@ -11,7 +11,7 @@
     </md-button>
 
     <md-input-container class="md-block">
-      <label>Option {{$index + 1}}</label>
+      <label>选项 {{$index + 1}}</label>
       <input ng-model="option.value" />
     </md-input-container>
 
@@ -21,5 +21,5 @@
 
   </div>
 
-  <md-button class="md-raised md-accent" ng-click="RadioButton.addOption()">Add Option</md-button>
+  <md-button class="md-raised md-accent" ng-click="RadioButton.addOption()">添加</md-button>
 </div>

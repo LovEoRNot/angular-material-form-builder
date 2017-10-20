@@ -6,7 +6,7 @@
     </md-button>
 
     <md-input-container class="input-container">
-      <label>Column {{$index + 1}}</label>
+      <label>第{{$index + 1}}列</label>
       <input ng-model="column.value" />
     </md-input-container>
 
@@ -17,7 +17,7 @@
 
   </div>
   <div layout="row" layout-align="start">
-    <md-button class="md-primary add-option-button" md-no-ink aria-label="add option item" ng-click="Table.addColumn()">Add Column</md-button>
+    <md-button class="md-primary add-option-button" md-no-ink aria-label="add option item" ng-click="Table.addColumn()">添加列</md-button>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
     </md-button>
 
     <md-input-container class="input-container">
-      <label>Row {{$index + 1}}</label>
+      <label>第{{$index + 1}}行</label>
       <input ng-model="row.value" />
     </md-input-container>
 
@@ -41,6 +41,6 @@
 
   </div>
   <div layout="row" layout-align="start">
-    <md-button class="md-primary add-option-button" md-no-ink aria-label="add row item" ng-click="Table.addRow()">Add row</md-button>
+    <md-button class="md-primary add-option-button" md-no-ink aria-label="add row item" ng-click="Table.addRow()">添加行</md-button>
   </div>
 </div>

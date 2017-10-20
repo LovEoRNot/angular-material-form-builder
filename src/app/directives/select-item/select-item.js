@@ -25,7 +25,9 @@
     Utils.extend(this.item, {
       config: {},
       options: [{
-        value: ''
+        value: '选项一'
+      },{
+        value: '选项二'
       }]
     });
   }
@@ -36,7 +38,7 @@
 
   SelectCtrl.prototype.addOption = function () {
     this.item.options.push({
-      value: ''
+      value: '选项'+(+this.item.options.length+1)
     });
 
     setTimeout(function() {

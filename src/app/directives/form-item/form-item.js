@@ -58,7 +58,8 @@
         helpText: ''
       },
       config: {
-        required: false
+        required: false,
+        disappear: false
       }
     });
   };
@@ -92,7 +93,8 @@
 
     var suffix = '' +
       '<md-input-container>' +
-        '<md-checkbox ng-model="FormItem.item.config.required">Required field</md-checkbox>' +
+        '<md-checkbox ng-model="FormItem.item.config.required">是否必填</md-checkbox>' +
+        '<md-checkbox ng-model="FormItem.item.config.disappear">是否隐藏</md-checkbox>' +
       '</md-input-container>' +
     '</div>';
 

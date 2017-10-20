@@ -28,11 +28,11 @@
       config: {
         rows: [{
           index: 0,
-          value: ''
+          value: '第1行'
         }],
         columns: [{
           index: 0,
-          value: ''
+          value: '第1列'
         }],
         values: [[]]   //格式：{row: 0, col: 0, value: ''}
       }
@@ -54,7 +54,7 @@
   tableItemCtrl.prototype.addRow = function() {
     this.item.config.rows.push({
       index: this.item.config.rows.length,
-      value: ''
+      value: `第${+this.item.config.rows.length+1}行`
     });
 
     this.item.config.values.push(['']);
@@ -84,7 +84,7 @@
   tableItemCtrl.prototype.addColumn = function() {
     this.item.config.columns.push({
       index: this.item.config.columns.length,
-      value: ''
+      value: `第${+this.item.config.columns.length+1}列`
     });
 
     setTimeout(function() {

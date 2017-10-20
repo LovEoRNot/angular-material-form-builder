@@ -27,10 +27,16 @@
       config: {
         maxSelections: ''
       },
-      options: [{
-        value: '',
-        selected: false
-      }]
+      options: [
+        {
+          value: '选项1',
+          selected: false
+        },
+        {
+          value: '选项2',
+          selected: false
+        }
+      ]
     });
   }
 
@@ -40,7 +46,7 @@
 
   CheckboxesItemCtrl.prototype.addOption = function () {
     this.item.options.push({
-      value: '',
+      value: '选项'+(+this.item.options.length+1),
       selected: false
     });
 

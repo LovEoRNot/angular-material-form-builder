@@ -1,0 +1,9 @@
+<md-input-container class="md-block">
+  <input ng-model="FileInputView.formItem.value"
+         type="{{FileInputView.formItem.config.type}}"
+         ng-required="FileInputView.formItem.config.required"
+         arial-label="..." />
+  <div ng-messages="FileInputView.form.$error">
+    <div ng-message="required">This field is required</div>
+  </div>
+</md-input-container>

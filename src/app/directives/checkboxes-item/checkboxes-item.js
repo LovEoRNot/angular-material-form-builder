@@ -25,7 +25,7 @@
 
     Utils.extend(this.item, {
       config: {
-        maxSelections: null
+        maxSelections: ''
       },
       options: [{
         value: '',

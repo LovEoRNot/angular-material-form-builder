@@ -2,17 +2,17 @@
   'use strict';
 
   angular.module('angularMaterialFormBuilder')
-    .directive('inputItem', InputItem);
+    .directive('fileInputItem', FileInputItem);
 
-  function InputItem() {
+  function FileInputItem() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/directives/input-item/input-item.html',
+      templateUrl: 'app/directives/file-input-item/file-input-item.html',
       scope: {
         item: '='
       },
-      controller: InputItemCtrl,
-      controllerAs: 'Input',
+      controller: FileInputItemCtrl,
+      controllerAs: 'FileInput',
       bindToController: true
     };
 
@@ -20,12 +20,12 @@
   }
 
   /*@ngInject*/
-  function InputItemCtrl(Utils, $element) {
+  function FileInputItemCtrl(Utils, $element) {
     this.Element = $element;
 
     Utils.extend(this.item, {
       config: {
-        type: 'text'
+        type: 'file'
       }
     });
   }

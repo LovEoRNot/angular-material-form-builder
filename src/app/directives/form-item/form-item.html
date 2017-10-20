@@ -1,5 +1,5 @@
 <div class="form-item-container" class="md-inline-form">
-
+  <h3 style="margin: 0; position: absolute; top: 10px; left: 10px">{{FormItem.index()+1}}、{{FormItem.item.type}}</h3>
   <div class="form-item-actions">
     <md-button class="md-button" ng-if="FormItem.Attrs.onDelete" ng-click="FormItem.deleteClicked()">
       <i class="material-icons small">delete</i>
@@ -24,11 +24,14 @@
 
   <div ng-switch="FormItem.item.type">
     <input-item ng-switch-when="input" item="FormItem.item"></input-item>
+    <date-input-item ng-switch-when="dateInput" item="FormItem.item"></date-input-item>
+    <file-input-item ng-switch-when="fileInput" item="FormItem.item"></file-input-item>
     <radio-button-item ng-switch-when="multipleChoices" item="FormItem.item"></radio-button-item>
     <matrix-item ng-switch-when="matrix" item="FormItem.item"></matrix-item>
     <checkboxes-item ng-switch-when="checkboxes" item="FormItem.item"></checkboxes-item>
     <textarea-item ng-switch-when="textarea" item="FormItem.item"></textarea-item>
     <select-item ng-switch-when="chooseFromList" item="FormItem.item"></select-item>
+    <table-item ng-switch-when="table" item="FormItem.item"></table-item>
     <p ng-switch-default>UNKNOWN TYPE</p>
   </div>
 

@@ -1,0 +1,22 @@
+<md-input-container class="matrix-container md-block" layout="column">
+  <div class="matrix">
+    <div class="matrix-row" flex layout="row">
+      <span class="matrix-cell" flex="20"></span>
+      <span class="matrix-cell matrix-cell-header" flex ng-repeat="column in TableView.formItem.config.columns track by $index">{{column.value}}</span>
+    </div>
+    <div class="matrix-row" ng-repeat="row in TableView.formItem.config.rows track by $index" layout="row">
+      <span class="matrix-cell" flex="20" layout="column" layout-align="center">{{row.value}}</span>
+      <md-radio-group ng-model="row.selected" flex layout="row">
+        <span class="matrix-cell radio-button-cell" flex ng-repeat="column in TableView.formItem.config.columns track by $index">
+          <md-input-container class="input-container" style="padding-bottom: 10px;">
+            <input type="text" aria-label="..." ng-model="TableView.formItem.config.values[row.index][column.index]" style="color: #000; text-align: center;" ng-change="TableView._changeValue(row, column, TableView.formItem.config.values[row.index][column.index])">
+          </md-input-container>
+        </span>
+      </md-radio-group>
+    </div>
+  </div>
+
+  <div ng-messages="TableView.form.$error">
+    <div ng-message="required">This is required</div>
+  </div>
+</md-input-container>

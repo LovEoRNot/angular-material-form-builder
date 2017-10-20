@@ -39,11 +39,14 @@
     this.Utils = Utils;
     this.templates = {
       input: '<input-item item="FormItem.item"></input-item>',
+      dateInput: '<date-input-item item="FormItem.item"></date-input-item>',
+      fileInput: '<file-input-item item="FormItem.item"></file-input-item>',
       chooseFromList: '<bet-form-choose-from-list item="FormItem.item"></bet-form-choose-from-list>',
       multipleChoices: '<radio-button-item item="FormItem.item"></radio-button-item>',
       matrix: '<matrix-item item="FormItem.item"></matrix-item>',
       checkboxes: '<checkboxes-item item="FormItem.item"></checkboxes-item>',
-      textarea: '<textarea-item item="FormItem.item"></textarea-item>'
+      textarea: '<textarea-item item="FormItem.item"></textarea-item>',
+      table: '<table-item item="FormItem.item"></table-item>'
     };
   }
 

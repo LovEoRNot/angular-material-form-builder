@@ -1,0 +1,7 @@
+<md-input-container class="md-block">
+  <md-datepicker ng-model="DateInputView.formItem.value" 
+                 ng-required="DateInputView.formItem.config.required"></md-datepicker>
+  <div ng-messages="DateInputView.form.$error">
+    <div ng-message="required">This field is required</div>
+  </div>
+</md-input-container>

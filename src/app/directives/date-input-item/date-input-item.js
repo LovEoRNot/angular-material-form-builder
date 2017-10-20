@@ -2,17 +2,17 @@
   'use strict';
 
   angular.module('angularMaterialFormBuilder')
-    .directive('inputItem', InputItem);
+    .directive('dateInputItem', DateInputItem);
 
-  function InputItem() {
+  function DateInputItem() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/directives/input-item/input-item.html',
+      templateUrl: 'app/directives/date-input-item/date-input-item.html',
       scope: {
         item: '='
       },
-      controller: InputItemCtrl,
-      controllerAs: 'Input',
+      controller: DateInputItemCtrl,
+      controllerAs: 'DateInput',
       bindToController: true
     };
 
@@ -20,12 +20,12 @@
   }
 
   /*@ngInject*/
-  function InputItemCtrl(Utils, $element) {
+  function DateInputItemCtrl(Utils, $element) {
     this.Element = $element;
 
     Utils.extend(this.item, {
       config: {
-        type: 'text'
+        type: 'date'
       }
     });
   }

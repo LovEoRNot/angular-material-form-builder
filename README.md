@@ -22,7 +22,12 @@ Here is the list of form items which are supported by the module:
  4. Textarea
  5. Matrix
  6. Select
-
+ 7. File-upload *
+ 8. datepicker *
+ 9. table (based on Matrix) * 
+ 
+ 
+ 
 Installation
 -------------
 You can get the module through [bower](http://bower.io/) package manager, just run the following command in your project:  

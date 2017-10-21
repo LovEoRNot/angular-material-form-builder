@@ -25,6 +25,9 @@
     this.ColumnContainer = angular.element($document[0].querySelector('.columnContainer'));
 
     Utils.extend(this.item, {
+      props: {
+        title: '矩阵'
+      },
       config: {
         rows: [{
           value: '第1行'
@@ -42,7 +45,7 @@
 
   MatrixItemCtrl.prototype.addRow = function() {
     this.item.config.rows.push({
-      value: `第${+this.item.config.rows.length+1}行`
+      value: '第'+(+this.item.config.rows.length+1)+'行'
     });
 
     setTimeout(function() {
@@ -58,7 +61,7 @@
 
   MatrixItemCtrl.prototype.addColumn = function() {
     this.item.config.columns.push({
-      value: `第${+this.item.config.columns.length+1}列`
+      value: '第'+(+this.item.config.columns.length+1)+'列'
     });
 
     setTimeout(function() {

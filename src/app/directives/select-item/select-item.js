@@ -24,10 +24,13 @@
     this.Element = $element;
     Utils.extend(this.item, {
       config: {},
+      props: {
+        title: '下拉列表'
+      },
       options: [{
-        value: '选项一'
+        value: '选项1'
       },{
-        value: '选项二'
+        value: '选项2'
       }]
     });
   }

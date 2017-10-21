@@ -24,6 +24,9 @@
     this.Element = $element;
 
     Utils.extend(this.item, {
+      props: {
+        title: '文件选择'
+      },
       config: {
         type: 'file'
       }

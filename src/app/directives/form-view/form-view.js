@@ -32,4 +32,11 @@
   FormViewCtrl.prototype.init = function () {
   };
 
+  FormViewCtrl.prototype.showActive = function(index) {
+    for(var i = 0; i < this.form.items.length; i++) {
+      this.form.items[i].isActive = false;
+    }
+    this.form.items[index].isActive = true;
+  }
+
 })(angular);

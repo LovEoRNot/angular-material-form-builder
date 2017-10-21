@@ -27,6 +27,9 @@
       config: {
         maxSelections: ''
       },
+      props: {
+        title: '复选框'
+      },
       options: [
         {
           value: '选项1',

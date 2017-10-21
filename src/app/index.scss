@@ -1,13 +1,17 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 $button-dim: 36px;
-
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 .main-view {
   .content {
 
     .builder, .view, .json {
       border-right: 1px solid #CCCCCC;
-      height: 800px;
+      height: 100%;
       overflow: auto;
     }
   }
@@ -17,7 +21,6 @@ $button-dim: 36px;
   min-height: $button-dim;
   min-width: $button-dim;
   height: $button-dim;
-  width: $button-dim;
   line-height: 0;
 }
 
@@ -51,6 +54,36 @@ form-item {
     }
   }
 }
+.md-datepicker-calendar {
+  background: #fff;
+}
+.md-datepicker-input-container {
+  display: inline-block !important;
+}
+.red {color: red}
+.text-12 {font-size: 12px;}
+
+.formItem {
+  border: 1px dashed #aaa;
+  padding: 5px;
+  margin: 5px 0;
+  background: #fff;
+  &:hover {
+    cursor: move;
+    border: 2px dashed #aaa;
+  }
+
+}
+
+.my-icons {
+  top: 30% !important;
+}
+
+md-grid-tile {
+  button {
+    min-width: 70px !important;
+  }
+}
 
 form-view {
   .formItem-title {
@@ -70,7 +103,8 @@ form-view {
    md-select, 
   .md-input[type="text"],
   .md-input[type="number"],
-  input[type='file'] {
+  input[type='file'],
+  textarea {
     border: 1px solid #eee !important;
     padding: 8px 5px !important;
     border-radius: 5px; 

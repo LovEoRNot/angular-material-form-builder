@@ -24,6 +24,9 @@
     this.Element = $element;
 
     Utils.extend(this.item, {
+      props: {
+        title: '输入框'
+      },
       config: {
         type: 'text'
       }

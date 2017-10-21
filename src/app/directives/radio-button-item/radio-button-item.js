@@ -24,12 +24,15 @@
     this.Element = $element;
     Utils.extend(this.item, {
       config: {},
+      props: {
+        title: '单选框'
+      },
       options: [
         {
           value: '选项1'
         },
         {
-          value: '选项1'
+          value: '选项2'
         }
       ]
     });

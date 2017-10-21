@@ -1,18 +1,20 @@
-<div class="formItem" ng-repeat="formItem in FormView.form.items track by $index" ng-switch="formItem.type" layout="column">
-  <ng-form name="formItemForm">
-    <div>
-      <div class="formItem-title">{{formItem.props.title}}</div>
-      <div class="formItem-help-text">{{formItem.props.helpText}}</div>
-
-      <checkboxes-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="checkboxes"></checkboxes-view>
-      <radio-button-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="multipleChoices"></radio-button-view>
-      <input-view form-item="formItem" form="formItemForm" ng-switch-when="input"></input-view>
-      <date-input-view form-item="formItem" form="formItemForm" ng-switch-when="dateInput"></date-input-view>
-      <file-input-view form-item="formItem" form="formItemForm" ng-switch-when="fileInput"></file-input-view>
-      <textarea-view form-item="formItem" form="formItemForm" ng-switch-when="textarea"></textarea-view>
-      <matrix-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="matrix"></matrix-view>
-      <select-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="chooseFromList"></select-view>
-      <table-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="table"></table-view>
-    </div>
-  </ng-form>
+<div sv-root sv-part="FormView.form.items">
+  <div class="formItem" ng-repeat="formItem in FormView.form.items track by $index" ng-switch="formItem.type" layout="column" sv-element ng-click="FormView.showActive($index)">
+    <ng-form name="formItemForm">
+      <div>
+        <div class="formItem-title">{{formItem.props.title}}&nbsp;&nbsp;<span ng-show="formItem.config.disappear" class="red text-12">该字段将会被隐藏</span></div>
+        <div class="formItem-help-text">{{formItem.props.helpText}}</div>
+  
+        <checkboxes-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="checkboxes"></checkboxes-view>
+        <radio-button-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="multipleChoices"></radio-button-view>
+        <input-view form-item="formItem" form="formItemForm" ng-switch-when="input"></input-view>
+        <date-input-view form-item="formItem" form="formItemForm" ng-switch-when="dateInput"></date-input-view>
+        <file-input-view form-item="formItem" form="formItemForm" ng-switch-when="fileInput"></file-input-view>
+        <textarea-view form-item="formItem" form="formItemForm" ng-switch-when="textarea"></textarea-view>
+        <matrix-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="matrix"></matrix-view>
+        <select-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="chooseFromList"></select-view>
+        <table-view form-item="formItem" is-preview="true" form="formItemForm" ng-switch-when="table"></table-view>
+      </div>
+    </ng-form>
+  </div>   
 </div>

@@ -24,6 +24,9 @@
     this.Element = $element;
 
     Utils.extend(this.item, {
+      props: {
+        title: '日期选择'
+      },
       config: {
         type: 'date'
       }

@@ -60,7 +60,8 @@
       config: {
         required: false,
         disappear: false
-      }
+      },
+      isActive: false
     });
   };
 

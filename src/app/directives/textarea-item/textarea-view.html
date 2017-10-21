@@ -2,7 +2,7 @@
   <textarea ng-model="TextareaView.formItem.value"
          placeholder="{{TextareaView.formItem.config.placeholder}}"
          ng-required="TextareaView.formItem.config.required"
-         rows="4"></textarea>
+         rows="4" style="overflow: auto"></textarea>
   <div ng-messages="TextareaView.form.$error">
     <div ng-message="required">该字段是必填项</div>
   </div>

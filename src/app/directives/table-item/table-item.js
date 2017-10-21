@@ -25,6 +25,9 @@
     this.ColumnContainer = angular.element($document[0].querySelector('.columnContainer'));
 
     Utils.extend(this.item, {
+      props: {
+        title: '表格'
+      },
       config: {
         rows: [{
           index: 0,
@@ -54,7 +57,7 @@
   tableItemCtrl.prototype.addRow = function() {
     this.item.config.rows.push({
       index: this.item.config.rows.length,
-      value: `第${+this.item.config.rows.length+1}行`
+      value: '第'+(+this.item.config.rows.length+1)+'行'
     });
 
     this.item.config.values.push(['']);
@@ -84,7 +87,7 @@
   tableItemCtrl.prototype.addColumn = function() {
     this.item.config.columns.push({
       index: this.item.config.columns.length,
-      value: `第${+this.item.config.columns.length+1}列`
+      value: '第'+(+this.item.config.columns.length+1)+'列'
     });
 
     setTimeout(function() {

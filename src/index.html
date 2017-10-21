@@ -1,101 +1,132 @@
 <!doctype html>
 <html ng-app="angularMaterialFormBuilder" layout="column">
-  <head>
-    <meta charset="utf-8">
-    <title>Angular Material Form Builder</title>
-    <meta name="description" content="AngularJS dynamic form builder with material design implementation"> 
-    <meta name="keywords" content="angular, angularjs, google material, material design, form builder, form generator">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
-    <!-- endbower -->
-    <!-- endbuild -->
+<head>
+  <meta charset="utf-8">
+  <title>Angular Material Form Builder</title>
+  <meta name="description" content="AngularJS dynamic form builder with material design implementation">
+  <meta name="keywords" content="angular, angularjs, google material, material design, form builder, form generator">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css({.tmp/serve,src}) styles/app.css -->
-    <!-- inject:css -->
-    <!-- css files will be automatically insert here -->
-    <!-- endinject -->
-    <!-- endbuild -->
-    <style>
-    .md-datepicker-calendar {background: #fff;}
-    </style>
-  </head>
-  <body ng-controller="MainController as main" class="main-view">
-    <!--[if lt IE 10]>
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body ng-controller="MainController as main" class="main-view">
+  <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="content" layout="row" layout-padding="" layout-margin="" layout-fill="">
-      <div flex="" layout="column" class="builder">
-        <h2>表单创建工具</h2>
-        <div layout="column">
-          <form-item ng-repeat="item in main.form.items track by $index" type="{{item.type}}" item="item" index="$index" on-delete="main.delete(item, index)" on-up="main.up(item, index)" on-down="main.down(item, index)"></form-item>
-        </div>
+  <div class="content" layout="row" layout-padding="" layout-margin="" layout-fill="">
+    <div flex="20" layout="column" class="builder">
+      <h2>表单控件</h2>
+      <div layout="row">
+        <md-grid-list md-cols-xs="1" md-cols-md="2" md-cols-gt-md="4"
+                      md-row-height="1:1"
+                      md-gutter="8px" style="width: 100%">
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('chooseFromList')">
+              <i class="material-icons my-icons">playlist_add_check</i><br>
+              <span>下拉框</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('matrix')">
+              <i class="material-icons my-icons">grid_on</i><br>
+              <span>矩阵</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('textarea')">
+              <i class="material-icons my-icons">keyboard</i><br>
+              <span>文本域</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('input')">
+              <i class="material-icons my-icons">text_format</i><br>
+              <span>文本框</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('dateInput')">
+              <i class="material-icons my-icons">event_note</i><br>
+              <span>日期</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('fileInput')">
+              <i class="material-icons my-icons">file_upload</i><br>
+              <span>文件上传</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('multipleChoices')">
+              <i class="material-icons my-icons">radio_button_checked</i><br>
+              <span>单选框</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('checkboxes')">
+              <i class="material-icons my-icons">check_box</i><br>
+              <span>复选框</span>
+            </md-button>
+          </md-grid-tile>
+          <md-grid-tile>
+            <md-button aria-label="..." class="md-raised md-mini" ng-click="main.addItem('table')">
+              <i class="material-icons my-icons">view_module</i><br>
+              <span>表格</span>
+            </md-button>
+          </md-grid-tile>
+        </md-grid-list>
       </div>
-      <div flex="" layout="column" class="view">
-        <h2>预览</h2>
-        <form name="myFrom">
-          <form-view form="main.form"></form-view>
-        </form>
-      </div>
-      <div flex="20" layout="column" class="json">
-        <h2>Json</h2><pre>{{main.form | json}}</pre></div>
     </div>
-    <!-- <md-fab-speed-dial md-open="main.isOpen" md-direction="up" class="md-fab-bottom-right md-scale">
-      <md-fab-trigger>
-        <md-button aria-label="..." class="md-fab md-warn"><i class="material-icons medium">add</i></md-button>
-      </md-fab-trigger>
-      <md-fab-actions> -->
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('chooseFromList')"><i class="material-icons">playlist_add_check</i>
-          <md-tooltip md-direction="left" md-autohide="">下拉框</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('matrix')"><i class="material-icons">grid_on</i>
-          <md-tooltip md-direction="left" md-autohide="">矩阵</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('textarea')"><i class="material-icons">keyboard</i>
-          <md-tooltip md-direction="left" md-autohide="">文本域</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('input')"><i class="material-icons">text_format</i>
-          <md-tooltip md-direction="left" md-autohide="">文本框</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('dateInput')"><i class="material-icons">event_note</i>
-          <md-tooltip md-direction="left" md-autohide="">日期</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('fileInput')"><i class="material-icons">file_upload</i>
-          <md-tooltip md-direction="left" md-autohide="">文件上传</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('multipleChoices')"><i class="material-icons">radio_button_checked</i>
-          <md-tooltip md-direction="left" md-autohide="">单选框</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('checkboxes')"><i class="material-icons">check_box</i>
-          <md-tooltip md-direction="left" md-autohide="">复选框</md-tooltip>
-        </md-button>
-        <md-button aria-label="..." class="md-fab md-raised md-mini" ng-click="main.addItem('table')"><i class="material-icons">view_module</i>
-          <md-tooltip md-direction="left" md-autohide>表格</md-tooltip>
-        </md-button>
-      <!-- </md-fab-actions>
-    </md-fab-speed-dial> -->
+    <div flex="" layout="column" class="view">
+      <h2>预览</h2>
+      <form name="myFrom">
+        <form-view form="main.form"></form-view>
+      </form>
+    </div>
+    <div flex="25" layout="column" class="json">
+      <h2>控件设置</h2>
+      <div flex layout="column" style="overflow: auto">
+        <form-item ng-repeat="item in main.form.items track by $index" type="{{item.type}}" item="item" index="$index" on-delete="main.delete(item, index)"
+          on-up="main.up(item, index)" on-down="main.down(item, index)"></form-item>
+      </div>
+      <div flex="20" layout="column">
+        <pre>{{main.form | json}}</pre>
+      </div>
+    </div>
+  </div>
 
-    <a href="https://github.com/vlio20/angular-material-form-builder"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+  <!-- <a href="https://github.com/vlio20/angular-material-form-builder"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a> -->
 
-    <!-- build:js(src) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- run `gulp inject` to automatically populate bower script dependencies -->
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
-    <!-- inject:js -->
-    <!-- js files will be automatically insert here -->
-    <!-- endinject -->
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
 
-    <!-- inject:partials -->
-    <!-- angular templates will be automatically converted in js and inserted here -->
-    <!-- endinject -->
-    <!-- endbuild -->
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
 
-  </body>
+</body>
+
 </html>

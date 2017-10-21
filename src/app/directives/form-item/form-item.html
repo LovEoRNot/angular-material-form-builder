@@ -1,5 +1,4 @@
-<div class="form-item-container" class="md-inline-form">
-  <h3 style="margin: 0; position: absolute; top: 10px; left: 10px">{{FormItem.index()+1}}、{{FormItem.item.type}}</h3>
+<div class="form-item-container" class="md-inline-form" ng-show="FormItem.item.isActive">
   <div class="form-item-actions">
     <md-button class="md-button" ng-if="FormItem.Attrs.onDelete" ng-click="FormItem.deleteClicked()">
       <i class="material-icons small">delete</i>
